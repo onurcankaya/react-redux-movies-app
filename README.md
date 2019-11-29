@@ -1,1 +1,1 @@
-## Movies App
+## React Redux Movies App
