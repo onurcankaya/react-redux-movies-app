@@ -1,11 +1,7 @@
-import React from 'react';
+import React from 'react'
 
 function App() {
-  return (
-    <div>
-      React/Redux
-    </div>
-  );
+  return <div>React/Redux</div>
 }
 
-export default App;
+export default App
