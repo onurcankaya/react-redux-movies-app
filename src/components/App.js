@@ -1,7 +1,12 @@
 import React from 'react'
+import MovieList from './MovieList'
 
 function App() {
-  return <div>React/Redux</div>
+  return (
+    <div>
+      <MovieList />
+    </div>
+  )
 }
 
 export default App
