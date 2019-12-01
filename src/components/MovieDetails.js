@@ -2,17 +2,19 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 function MovieDetails({ selectedMovie }) {
+  if (!selectedMovie) {
+    return <div>Select a movie!</div>
+  }
   return (
     <div>
-      <div>Details for:</div>
-      <div>{selectedMovie && selectedMovie.title}</div>
-      <div>{selectedMovie && selectedMovie.duration}</div>
+      <h3>Details for:</h3>
+      <div>Title: {selectedMovie.title}</div>
+      <div>Duration: {selectedMovie.duration}</div>
     </div>
   )
 }
 
 const mapStateToProps = (state) => {
-  console.log(state)
   return {
     selectedMovie: state.selectedMovie,
   }
