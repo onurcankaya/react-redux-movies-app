@@ -6,9 +6,16 @@ class MovieList extends React.PureComponent {
     const { movies } = this.props
 
     return (
-      <div>
+      <div className="ui divided list">
         {movies &&
-          movies.map((movie, index) => <div key={index}>{movie.title}</div>)}
+          movies.map((movie, index) => (
+            <div className="item" key={index}>
+              <div className="right floated content">
+                <button className="ui button primary">Select</button>
+              </div>
+              <div className="content">{movie.title}</div>
+            </div>
+          ))}
       </div>
     )
   }

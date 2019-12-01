@@ -3,8 +3,12 @@ import MovieList from './MovieList'
 
 function App() {
   return (
-    <div>
-      <MovieList />
+    <div className="ui container grid">
+      <div className="ui row">
+        <div className="column eight wide">
+          <MovieList />
+        </div>
+      </div>
     </div>
   )
 }
