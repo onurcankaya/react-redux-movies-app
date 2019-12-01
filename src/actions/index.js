@@ -1,7 +1,7 @@
 // action creator
-export const selectMovie = (movieName) => {
+export const selectMovie = (movie) => {
   return {
     type: 'SELECT_MOVIE',
-    payload: movieName,
+    payload: movie,
   }
 }

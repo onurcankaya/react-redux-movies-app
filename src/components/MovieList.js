@@ -1,7 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { selectMovie } from '../actions'
 
 class MovieList extends React.PureComponent {
+  onSelectMovie = (movie) => {
+    this.props.selectMovie(movie)
+  }
+
   render() {
     const { movies } = this.props
 
@@ -10,10 +15,16 @@ class MovieList extends React.PureComponent {
         {movies &&
           movies.map((movie, index) => (
             <div className="item" key={index}>
-              <div className="right floated content">
-                <button className="ui button primary">Select</button>
+              <div>
+                <div className="right floated content">
+                  <button
+                    onClick={() => this.onSelectMovie(movie)}
+                    className="ui button primary">
+                    Select
+                  </button>
+                </div>
+                <div className="content">{movie.title}</div>
               </div>
-              <div className="content">{movie.title}</div>
             </div>
           ))}
       </div>
@@ -27,4 +38,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(MovieList)
+export default connect(mapStateToProps, { selectMovie })(MovieList)
